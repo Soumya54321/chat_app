@@ -1,0 +1,44 @@
+CREATE DATABASE chat_app;
+
+USE chat_app; 
+
+CREATE TABLE users(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
+    phone_no VARCHAR(255),
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id),
+    UNIQUE KEY(username)
+);
+
+CREATE TABLE chats(
+    id INT NOT NULL AUTO_INCREMENT,
+    sender_id INT NOT NULL,
+    receiver_id INT NOT NULL,
+    chat VARCHAR(2000) NOT NULL,
+    date_time timestamp NOT NULL DEFAULT current_timestamp,
+    PRIMARY KEY(id),
+    FOREIGN KEY(sender_id) REFERENCES users(id),
+    FOREIGN KEY(receiver_id) REFERENCES users(id)
+);
+
+CREATE TABLE friends(
+    id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    friend_id INT NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(user_id) REFERENCES users(id),
+    FOREIGN KEY(friend_id) REFERENCES users(id)
+);
+
+
+users:
+id, name, email, phone no, username, password 
+
+chats:
+id, sender_id, receiver_id, chat, date, time
+
+statuses:
+id, user_id, status, date, time
