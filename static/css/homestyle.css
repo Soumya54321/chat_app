@@ -1,0 +1,44 @@
+body{
+    margin: 0px;
+}
+
+.container{
+    box-sizing: border-box;
+    height: 910px;
+    display: block;
+    position: relative;
+}
+
+.friend{
+    border: solid black 0.5px;
+    height: 9%;
+    display: block;
+    position: relative;
+}
+p{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: left;
+}
+.div1{
+    border-right: solid black 0.5px;
+    float: left;
+    box-sizing: border-box;
+    width: 35%;
+    height: 100%;
+    margin: 0px;  
+    position: relative;
+}
+
+.div2{
+    border-right: solid black 0.5px;
+    float: left;
+    box-sizing: border-box;
+    width: 65%;
+    height: 100%;
+    margin: 0px;  
+    position: relative;
+}
