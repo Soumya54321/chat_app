@@ -3,18 +3,33 @@
 }
 
 body{
-    background-color: #f4f4f4;
+    margin:0;
 }
 
-.container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.body{
+    background-color: #cccbcb;
+}
+
+.body .middle .sides{
+    width:25%;
+    display: inline-block;
+}
+
+.center{
+    margin-top: 3%;
+    margin-bottom: 3%;
     background-color: white;
-    width: 35%;
+    width: 50%;
     padding: 50px 30px 50px 30px;
     border-radius: 10px;
+    display: inline-block;
+}
+
+.footer{
+    width: 100%;
+    height: 25%;
+    background-color: black;
+    position: absolute;
 }
 
 .heading{
@@ -40,6 +55,7 @@ body{
     width: 26px;
     text-align: center;
     font-size: 24px;
+    display: inline-flex;
 }
 
 .input input{
@@ -48,6 +64,7 @@ body{
     background: none;
     font-size: 20px;
     margin: 0 10px;
+    display: inline-flex;
 }
 
 .forgot-password{
@@ -80,4 +97,133 @@ body{
     padding: 10px 0 10px 0;
     background-color: #ff1058;
     color: white;
+}
+
+
+
+@media only screen and (max-width:900px){
+    .body{
+        background-color: #cccbcb;
+    }
+    
+    .body .middle .sides{
+        width:25%;
+        display: inline-block;
+    }
+    
+    .center{
+        margin-top: 3%;
+        margin-bottom: 3%;
+        background-color: white;
+        width: 50%;
+        padding: 50px 30px 50px 30px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+    
+    .footer{
+        width: 100%;
+        height: 25%;
+        background-color: black;
+        position: absolute;
+    }
+}
+
+
+
+@media only screen and (max-width:600px){
+
+    .body{
+        background-color: #cccbcb;
+    }
+    
+    .body .middle .sides{
+        width:25%;
+        display: inline-block;
+    }
+    
+    .center{
+        margin-top: 3%;
+        margin-bottom: 3%;
+        background-color: white;
+        width: 50%;
+        padding: 50px 30px 50px 30px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+    
+    .footer{
+        width: 100%;
+        height: 25%;
+        background-color: black;
+        position: absolute;
+    }
+
+    .input{
+        margin: 10px 5px 15px 5px;
+        color: #c0bfbf;
+    }
+    
+    .input i{
+        width: 26px;
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    .input input{
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 14px;
+        margin: 0 10px;
+    }
+}
+
+@media only screen and (max-width:350px){
+
+    .body{
+        background-color: #cccbcb;
+    }
+    
+    .body .middle .sides{
+        width: 5%;
+        display: inline-block;
+    }
+    
+    .center{
+        margin-top: 5%;
+        margin-bottom: 5%;
+        background-color: white;
+        width: 87%;
+        padding: 50px 20px 50px 20px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+    
+    .footer{
+        width: 100%;
+        height: 25%;
+        background-color: black;
+        position: absolute;
+    }
+
+    .input{
+        /* margin: 10px 5px 15px 5px; */
+        color: #c0bfbf;
+    }
+    
+    .input i{
+        width: 26px;
+        text-align: center;
+        font-size: 20px;
+    }
+    
+    .input input{
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 14px;
+        margin: 0 10px;
+        width: 75%
+    }
 }

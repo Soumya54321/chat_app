@@ -7,14 +7,19 @@ body{
 }
 
 .container{
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 3%;
+}
+
+.center{
     position: absolute;
-    top: 50%;
+    /* top: 60%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     background-color: white;
-    width: 35%;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 50%;
+    padding: 50px 30px 50px 30px;
     border-radius: 10px;
 }
 
@@ -41,6 +46,7 @@ body{
     width: 26px;
     text-align: center;
     font-size: 24px;
+    display: inline-flex;
 }
 
 .input input{
@@ -49,13 +55,13 @@ body{
     background: none;
     font-size: 20px;
     margin: 0 10px;
-    width: 70%;
+    display: inline-flex;
 }
 
 
 .submit{
     text-align: center;
-    margin: 40px 0;
+    margin: 10px 0;
 }
 
 .submit input{
@@ -67,4 +73,104 @@ body{
     padding: 10px 0 10px 0;
     background-color: #ff1058;
     color: white;
+}
+
+
+
+@media only screen and (max-width:900px){
+    .container{
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-top: 3%;
+    }
+    .center{
+        position: absolute;
+        /* top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%); */
+        background-color: white;
+        width: 50%;
+        padding: 50px 30px 50px 30px;
+        border-radius: 10px;
+    }
+}
+
+
+
+@media only screen and (max-width:600px){
+
+    .container{
+        margin-right: 10%;
+        margin-left: 10%;
+        margin-top: 3%;
+    }
+
+    .center{
+        position: absolute;
+        /* top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%); */
+        background-color: white;
+        width: 75%;
+        padding: 50px 30px 50px 30px;
+        border-radius: 10px;
+    }
+
+    .input{
+        margin: 10px 5px 15px 5px;
+        color: #c0bfbf;
+    }
+    
+    .input i{
+        width: 26px;
+        text-align: center;
+        font-size: 18px;
+    }
+    
+    .input input{
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 14px;
+        margin: 0 10px;
+    }
+}
+
+@media only screen and (max-width:350px){
+
+    .container{
+        margin-left: 3%;
+        margin-top: 10%;
+    }
+
+    .center{
+        position: absolute;
+        /* top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%); */
+        background-color: white;
+        width: 84%;
+        padding: 50px 10px 50px 10px;
+        border-radius: 10px;
+    }
+
+    .input{
+        /* margin: 10px 5px 15px 5px; */
+        color: #c0bfbf;
+    }
+    
+    .input i{
+        width: 26px;
+        text-align: center;
+        font-size: 20px;
+    }
+    
+    .input input{
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 14px;
+        margin: 0 10px;
+        width: 75%
+    }
 }

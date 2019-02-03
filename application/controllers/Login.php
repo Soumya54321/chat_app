@@ -25,11 +25,13 @@ class Login extends CI_Controller{
     }
 
     public function login_submit(){
+        session_start();
         $data['username']=$_POST['username'];
         $data['password']=$_POST['password'];
         $this->load->model('users');
         $result=$this->users->get_data_of_user($data);
         if(isset($result)){
+            $_SESSION['id']=$result['id'];
             echo "Data Matched";
         }
         else{
