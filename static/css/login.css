@@ -7,7 +7,9 @@ body{
 }
 
 .body{
-    background-color: #cccbcb;
+    background-image: url(/static/img/bg2.png);
+    background-size: 100%;
+    background-repeat: repeat;
 }
 
 .body .middle .sides{
