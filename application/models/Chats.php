@@ -24,9 +24,11 @@
             $this->db->from('chats');
             $this->db->where('chats.sender_id',$sender_id);
             $this->db->where('chats.receiver_id',$receiver_id);
+            $this->db->or_where('chats.sender_id',$receiver_id);
+            $this->db->or_where('chats.receiver_id',$sender_id);
             $this->db->order_by('chats.id', 'ASC');
-
             $chats=$this->db->get();
+
             return $chats->result_array();
         }
     }
