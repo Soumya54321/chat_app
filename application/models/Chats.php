@@ -25,11 +25,30 @@
             $this->db->where('chats.sender_id',$sender_id);
             $this->db->where('chats.receiver_id',$receiver_id);
             $this->db->or_where('chats.sender_id',$receiver_id);
-            $this->db->or_where('chats.receiver_id',$sender_id);
+            $this->db->where('chats.receiver_id',$sender_id);
             $this->db->order_by('chats.id', 'ASC');
             $chats=$this->db->get();
 
             return $chats->result_array();
+        }
+
+        public function send_new_chat($data){
+            $r = $this->db->insert('chats', $data);
+            return $r;
+        }
+
+        public function last_chat($sender_id,$receiver_id){
+            $this->db->select('chats.*');
+            $this->db->from('chats');
+            $this->db->where('chats.sender_id',$sender_id);
+            $this->db->where('chats.receiver_id',$receiver_id);
+            $this->db->or_where('chats.sender_id',$receiver_id);
+            $this->db->where('chats.receiver_id',$sender_id);
+            $this->db->order_by('chats.id', 'DESC');
+            $this->db->limit('1');
+            $chat=$this->db->get();
+
+            return $chat->result_array();
         }
     }
 ?>

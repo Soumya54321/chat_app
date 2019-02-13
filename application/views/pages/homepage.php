@@ -34,9 +34,9 @@
                 <div class="div21"><p> Chats</p></div>
                 <div class="div22" id="view_ajax"></div>
                 <div class="div23">
-                    <form method="post" id="textarea" class="textarea" >
-                        <textarea  name="chat" class="chat"></textarea>
-                        <input  class="send" type="submit" name="submit" value="send" id="send">
+                    <form method="post" id="sendchat" class="textarea" >
+                        <textarea  name="chat" class="chat" id="textarea"></textarea>
+                        <input  class="send" type="submit" name="submit" value="submit" id="send">
                     </form>        
                 </div>
             </div>
