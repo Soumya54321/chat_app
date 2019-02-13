@@ -32,10 +32,12 @@ class Login extends CI_Controller{
         $result=$this->users->get_data_of_user($data);
         if(isset($result)){
             $_SESSION['id']=$result['id'];
-            echo "Data Matched";
+            $message['success']=true;
+            echo json_encode($message);
         }
         else{
-            echo "Data is not valid";
+            $message['success']=false;
+            echo json_encode($message);
         }
     }
 

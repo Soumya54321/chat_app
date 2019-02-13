@@ -3,24 +3,33 @@
 }
 
 body{
-    background-color: #f4f4f4;
+    margin:0;
+    background-image: url(/static/img/bg2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.container{
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 3%;
+
+.body .middle .sides{
+    width:25%;
+    display: inline-block;
 }
 
 .center{
-    position: absolute;
-    /* top: 60%;
-    left: 50%;
-    transform: translate(-50%,-50%); */
+    margin-top: 3%;
+    margin-bottom: 3%;
     background-color: white;
     width: 50%;
-    padding: 50px 30px 50px 30px;
+    padding: 50px 30px 20px 30px;
     border-radius: 10px;
+    display: inline-block;
+}
+
+.footer{
+    width: 100%;
+    height: 25%;;
+    background-color: black;
+    position: absolute;
 }
 
 .heading{
@@ -56,12 +65,30 @@ body{
     font-size: 20px;
     margin: 0 10px;
     display: inline-flex;
+    width: 70%;;
 }
 
+.forgot-password{
+    margin-top: 15px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.forgot-password::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.forgot-password a{
+    float: right;
+    padding-right: 5px;
+    color: #292828;
+}
 
 .submit{
     text-align: center;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .submit input{
@@ -75,23 +102,44 @@ body{
     color: white;
 }
 
+.create-acc{
+    margin-top: 3%;
+    text-align: center;
+    text-decoration: none;
+}
 
+.create-acc a{
+    color: #292828;
+}
 
-@media only screen and (max-width:900px){
-    .container{
-        margin-left: 25%;
-        margin-right: 25%;
-        margin-top: 3%;
+@media only screen and (max-width:1000px){
+    body{
+        margin:0;
+        background-image: url(/static/img/bg2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
+    
+    .body .middle .sides{
+        width: 15%;
+        display: inline-block;
+    }
+    
     .center{
-        position: absolute;
-        /* top: 60%;
-        left: 50%;
-        transform: translate(-50%,-50%); */
+        margin-top: 3%;
+        margin-bottom: 3%;
         background-color: white;
-        width: 50%;
+        width: 70%;
         padding: 50px 30px 50px 30px;
         border-radius: 10px;
+        display: inline-block;
+    }
+    
+    .footer{
+        width: 100%;
+        height: 25%;
+        background-color: black;
+        position: absolute;
     }
 }
 
@@ -99,21 +147,33 @@ body{
 
 @media only screen and (max-width:600px){
 
-    .container{
-        margin-right: 10%;
-        margin-left: 10%;
-        margin-top: 3%;
+    body{
+        margin:0;
+        background-image: url(/static/img/bg2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
-
+    
+    .body .middle .sides{
+        width: 12.5%;
+        display: inline-block;
+    }
+    
     .center{
-        position: absolute;
-        /* top: 60%;
-        left: 50%;
-        transform: translate(-50%,-50%); */
+        margin-top: 3%;
+        margin-bottom: 3%;
         background-color: white;
         width: 75%;
         padding: 50px 30px 50px 30px;
         border-radius: 10px;
+        display: inline-block;
+    }
+    
+    .footer{
+        width: 100%;
+        height: 25%;
+        background-color: black;
+        position: absolute;
     }
 
     .input{
@@ -138,20 +198,33 @@ body{
 
 @media only screen and (max-width:350px){
 
-    .container{
-        margin-left: 3%;
-        margin-top: 10%;
+    body{
+        margin:0;
+        background-image: url(/static/img/bg2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
-
+    
+    .body .middle .sides{
+        width: 5%;
+        display: inline-block;
+    }
+    
     .center{
-        position: absolute;
-        /* top: 60%;
-        left: 50%;
-        transform: translate(-50%,-50%); */
+        margin-top: 5%;
+        margin-bottom: 5%;
         background-color: white;
-        width: 84%;
-        padding: 50px 10px 50px 10px;
+        width: 87%;
+        padding: 50px 20px 50px 20px;
         border-radius: 10px;
+        display: inline-block;
+    }
+    
+    .footer{
+        width: 100%;
+        height: 25%;
+        background-color: black;
+        position: absolute;
     }
 
     .input{
