@@ -1,7 +1,8 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
-$user=1;
+
+//$user=1;
 $friend=0;
 
 class Home extends CI_Controller {
@@ -9,7 +10,8 @@ class Home extends CI_Controller {
 
     public function homepage()
 	{
-        $user_id=$GLOBALS['user'];
+        session_start();
+        $user_id=$_SESSION['id'];
         $this->load->model('chats');
         $data['friend']= $this->chats->fetch_all_friends($user_id);
         $this->load->view('pages/homepage',$data);
@@ -22,6 +24,7 @@ class Home extends CI_Controller {
     
     public function chat()
     {
+        session_start();
         $response = array();
         $conn = $this->load->model('chats');
         if (!$conn) {
@@ -30,7 +33,7 @@ class Home extends CI_Controller {
             echo json_encode($response);
             exit();
         }
-        $sender_id = $_POST['sender_id'];
+        $sender_id = $_SESSION['id'];
         $receiver_id = $_POST['receiver_id'];
         $GLOBALS['friend']=$_POST['receiver_id'];
         $row = array();
@@ -50,6 +53,7 @@ class Home extends CI_Controller {
     
     public function chat_send()
     {
+        session_start();
         $response = array();
         $conn = $this->load->model('chats');
         if (!$conn) {
@@ -59,7 +63,7 @@ class Home extends CI_Controller {
             exit();
         }
 
-        $data['sender_id'] = 1;
+        $data['sender_id'] = $_SESSION['id'];
         $data['receiver_id'] = $_POST['receiver_id'];
         $data['chat']=$_POST['chat'];
         $r = $this->chats->send_new_chat($data);
@@ -76,6 +80,7 @@ class Home extends CI_Controller {
 
     public function fetch_chat()
         {
+            session_start();
             $response = array();
             $conn = $this->load->model('chats');
             if (!$conn) {
@@ -84,7 +89,7 @@ class Home extends CI_Controller {
                 echo json_encode($response);
                 exit();
             }
-            $sender_id = $_POST['sender_id'];
+            $sender_id = $_SESSION['id'];
             $receiver_id = $_POST['receiver_id'];
             $row = array();
             $result = $this->chats->last_chat($sender_id,$receiver_id);

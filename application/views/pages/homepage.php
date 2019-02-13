@@ -1,7 +1,3 @@
-<?php 
-    session_start();
-?>
-
 <html>
     <head>
         <link rel="stylesheet" href="/static/css/homestyle.css">

@@ -88,7 +88,7 @@ p{
     height: 90%;
     display: block;
     position: relative;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .div21{
