@@ -11,7 +11,7 @@ class Home extends CI_Controller {
     public function homepage()
 	{
         session_start();
-        $user_id=$_SESSION['id'];
+        $user_id=1;//$_SESSION['id'];
         $this->load->model('chats');
         $data['friend']= $this->chats->fetch_all_friends($user_id);
         $this->load->view('pages/homepage',$data);
@@ -33,7 +33,7 @@ class Home extends CI_Controller {
             echo json_encode($response);
             exit();
         }
-        $sender_id = $_SESSION['id'];
+        $sender_id = 1;//$_SESSION['id'];
         $receiver_id = $_POST['receiver_id'];
         $GLOBALS['friend']=$_POST['receiver_id'];
         $row = array();
@@ -63,7 +63,7 @@ class Home extends CI_Controller {
             exit();
         }
 
-        $data['sender_id'] = $_SESSION['id'];
+        $data['sender_id'] =1;// $_SESSION['id'];
         $data['receiver_id'] = $_POST['receiver_id'];
         $data['chat']=$_POST['chat'];
         $r = $this->chats->send_new_chat($data);
@@ -89,7 +89,7 @@ class Home extends CI_Controller {
                 echo json_encode($response);
                 exit();
             }
-            $sender_id = $_SESSION['id'];
+            $sender_id = 1;//$_SESSION['id'];
             $receiver_id = $_POST['receiver_id'];
             $row = array();
             $result = $this->chats->last_chat($sender_id,$receiver_id);

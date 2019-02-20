@@ -4,10 +4,14 @@ var last_date=0;
 var flag=0;
 var count=1;
 
+if(friend==0){
+    document.getElementById('sendchat').style.visibility="hidden";
+    document.getElementById('none').style.visibility="visible";
+}
+
 $('.friend').click(function(){
     friend=0;
     $('#view_ajax').empty();
-    //var user_id=1;
     var friend_id=$(this).attr('id');
     if(friend!=friend_id){
         friend=friend_id;
@@ -17,16 +21,11 @@ $('.friend').click(function(){
             success: fetch_success,
             type: "POST"
         });
-        return false;
-    }  
+    }
+    document.getElementById('none').style.visibility="hidden";
+    document.getElementById('sendchat').style.visibility="visible";
+    return false;  
 });
-
-setInterval(function(){
-    var elem = document.getElementById('view_ajax');
-    elem.scrollTop = elem.scrollHeight;
-
-    return false;
-}, 1);
 
 var fetch_success=function(data){
     var jsonData = JSON.parse(data);
@@ -40,6 +39,9 @@ var fetch_success=function(data){
         var html = '<div class="chatbox_me">'+ '<p class="chats">'+result.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result.date_time+'</p>' + '</div>';
         $('#view_ajax').append(html);
     }
+    var elem = document.getElementById('view_ajax');
+    elem.scrollTop = elem.scrollHeight;
+    $('#textarea').val('').empty();
     if(i==(jsonLength-1)){
         last_chat=result.chat;
         last_date=result.date_time;
@@ -48,34 +50,34 @@ var fetch_success=function(data){
 }
 
 $('#sendchat').submit(function() {
-    var chat_context=document.getElementById('textarea').value;
-    $('#textarea').val('').empty();
-    var url = "/home/chat_send";
-     $.ajax(url, {
-        data: {receiver_id:friend,chat:chat_context},
-        success: chat_show,
-        //error: on_error,
-        type: "POST"
-    });
+    if(friend!=0){
+        var chat_context=document.getElementById('textarea').value;
+        $('#textarea').val('').empty();
+        var url = "/home/chat_send";
+        $.ajax(url, {
+            data: {receiver_id:friend,chat:chat_context},
+            success: chat_show,
+            //error: on_error,
+            type: "POST"
+        });
+    }
     return false;
 });
 
 var chat_show=function(data){
-    //var user_id=1;
     var friend_id=friend;
-        $.ajax({
-            url : "/home/fetch_chat",
-            data: {receiver_id:friend_id},
-            success: fetch_chat,
-            type: "POST"
-        });
-        return false;
+    $.ajax({
+        url : "/home/fetch_chat",
+        data: {receiver_id:friend_id},
+        success: fetch_chat,
+        type: "POST"
+    });
+    return false;
 }  
 
 var fetch_chat=function(data){
     var jsonData = JSON.parse(data);
     var jsonLength = jsonData.length;
-
     for (var i = 0; i < jsonLength; i++) {
         var result1 = jsonData[i];
         if(last_chat!=result1.chat && last_date!=result1.date_time){
@@ -89,6 +91,8 @@ var fetch_chat=function(data){
                 var html = '<div class="chatbox_me">'+ '<p class="chats">'+result1.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result1.date_time+'</p>' + '</div>';
                 $('#view_ajax').append(html);
             }
+            var elem = document.getElementById('view_ajax');
+            elem.scrollTop = elem.scrollHeight;
             last_chat=result1.chat;
             last_date=result1.date_time;
             flag=0;
@@ -98,11 +102,10 @@ var fetch_chat=function(data){
 }
 
 setInterval(function(){
-    if(count==1){
+    if(count==1 & friend!=0){
         $('#view_ajax').empty();  
     }
     count=count+1;
-    //var user_id=1;
     if(friend!=0){
         var friend_id=friend;
     }
@@ -113,5 +116,5 @@ setInterval(function(){
         type: "POST"
     });
     return false;
-}, 500);
+}, 1000);
 
