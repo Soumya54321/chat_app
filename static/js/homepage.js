@@ -4,11 +4,6 @@ var last_date=0;
 var flag=0;
 var count=1;
 
-if(friend==0){
-    document.getElementById('sendchat').style.visibility="hidden";
-    document.getElementById('none').style.visibility="visible";
-}
-
 $('.friend').click(function(){
     friend=0;
     $('#view_ajax').empty();
@@ -22,8 +17,12 @@ $('.friend').click(function(){
             type: "POST"
         });
     }
-    document.getElementById('none').style.visibility="hidden";
-    document.getElementById('sendchat').style.visibility="visible";
+
+    //document.getElementById('none').style.display="none";
+    //document.getElementById('sendchat').style.display="block";
+    document.getElementById('none').style.display="none";
+    document.querySelector('.div22').style.display="block";
+    document.querySelector('.div23').style.display="block";
     return false;  
 });
 

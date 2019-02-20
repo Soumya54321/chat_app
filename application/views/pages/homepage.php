@@ -30,10 +30,10 @@
                     ?>
                 </div>
             </div>
-            <div class="div2">
+            <div class="div2" id="div2">
                 <div class="div21"><p> Chats</p></div>
+                <p id="none"><?php echo "Select a friend and</br>start a new conversation"?></p>
                 <div class="div22" id="view_ajax">
-                    <p class="none" id="none"><?php echo "No chat is found</br>Start a new conversation"?></p>
                 </div>
                 <div class="div23">
                     <form method="post" id="sendchat" class="textarea" >
