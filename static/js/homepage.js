@@ -17,9 +17,6 @@ $('.friend').click(function(){
             type: "POST"
         });
     }
-
-    //document.getElementById('none').style.display="none";
-    //document.getElementById('sendchat').style.display="block";
     document.getElementById('none').style.display="none";
     document.querySelector('.div22').style.display="block";
     document.querySelector('.div23').style.display="block";
@@ -32,10 +29,12 @@ var fetch_success=function(data){
     for (var i = 0; i < jsonLength; i++) {
     var result = jsonData[i];
     if(result.sender_id==friend){
-        var html = '<div class="chatbox_friend">'+ '<p class="chats">'+result.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result.date_time+'</p>' + '</div>';
+        var html = '<div class="chatbox_friend" id="chat_box">'+ '<p class="chats" id="x">'+result.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result.date_time+'</p>' + '</div>';
+        $('#chat_box').height($('.chats').val()*$('.date_time').val());
         $('#view_ajax').append(html);
     }else{
-        var html = '<div class="chatbox_me">'+ '<p class="chats">'+result.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result.date_time+'</p>' + '</div>';
+        var html = '<div class="chatbox_me" id="chat_box">'+ '<p class="chats" id="x">'+result.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result.date_time+'</p>' + '</div>';
+        $('#chat_box').height($('.chats').val()*$('.date_time').val());
         $('#view_ajax').append(html);
     }
     var elem = document.getElementById('view_ajax');
@@ -84,10 +83,12 @@ var fetch_chat=function(data){
         }        
         if(flag==1){
             if(result1.sender_id==friend){
-                var html = '<div class="chatbox_friend">'+ '<p class="chats">'+result1.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result1.date_time+'</p>' + '</div>';
+                var html = '<div class="chatbox_friend" id="chat_box">'+ '<p class="chats">'+result1.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result1.date_time+'</p>' + '</div>';
+                $('#chat_box').height($('.chats').val()*$('.date_time').val());
                 $('#view_ajax').append(html);
             }else{
-                var html = '<div class="chatbox_me">'+ '<p class="chats">'+result1.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result1.date_time+'</p>' + '</div>';
+                var html = '<div class="chatbox_me" id="chat_box">'+ '<p class="chats">'+result1.chat+'</p>'+'<br/>'+'<p class="date_time">'+ result1.date_time+'</p>' + '</div>';
+                $('#chat_box').height($('.chats').val()*$('.date_time').val());
                 $('#view_ajax').append(html);
             }
             var elem = document.getElementById('view_ajax');

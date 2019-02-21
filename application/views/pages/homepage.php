@@ -37,7 +37,7 @@
                 </div>
                 <div class="div23">
                     <form method="post" id="sendchat" class="textarea" >
-                        <textarea  name="chat" class="chat" id="textarea"></textarea>
+                        <textarea  rows="5" cols="50" name="chat" class="chat" id="textarea"></textarea>
                         <input  class="send" type="submit" name="submit" value="submit" id="send">
                     </form>
                 </div>

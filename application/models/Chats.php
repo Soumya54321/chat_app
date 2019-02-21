@@ -13,7 +13,7 @@
             $this->db->from('users');
             $this->db->join('friends','users.id=friends.friend_id');
             //$this->db->where('friends.friend_id',$user_id);
-            $this->db->or_where('friends.user_id',$user_id);
+            $this->db->where('friends.user_id',$user_id);
             $this->db->order_by('friends.id', 'ASC');
             
             $friends = $this->db->get();
