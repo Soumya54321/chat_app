@@ -12,10 +12,8 @@
             $this->db->select('users.*');
             $this->db->from('users');
             $this->db->join('friends','users.id=friends.friend_id');
-            //$this->db->where('friends.friend_id',$user_id);
             $this->db->where('friends.user_id',$user_id);
             $this->db->order_by('friends.id', 'ASC');
-            
             $friends = $this->db->get();
             return $friends->result_array();
         }
@@ -29,7 +27,6 @@
             $this->db->where('chats.receiver_id',$sender_id);
             $this->db->order_by('chats.id', 'ASC');
             $chats=$this->db->get();
-
             return $chats->result_array();
         }
 
@@ -48,7 +45,6 @@
             $this->db->order_by('chats.id', 'DESC');
             $this->db->limit('1');
             $chat=$this->db->get();
-
             return $chat->result_array();
         }
     }
