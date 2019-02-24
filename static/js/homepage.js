@@ -3,10 +3,12 @@ var last_chat="";
 var last_date=0;
 var flag=0;
 var count=1;
+var flag2=0;
 
 $('.friend').click(function(){
     friend=0;
     $('#view_ajax').empty();
+    flag2=1;
     var friend_id=$(this).attr('id');
     if(friend!=friend_id){
         friend=friend_id;
@@ -18,8 +20,8 @@ $('.friend').click(function(){
         });
     }
     document.getElementById('none').style.display="none";
-    document.querySelector('.div22').style.display="block";
-    document.querySelector('.div23').style.display="block";
+    document.querySelector('.right-mid').style.display="block";
+    document.querySelector('.right-bottom').style.display="block";
     return false;  
 });
 
@@ -102,19 +104,22 @@ var fetch_chat=function(data){
 }
 
 setInterval(function(){
-    if(count==1 & friend!=0){
-        $('#view_ajax').empty();  
-    }
-    count=count+1;
-    if(friend!=0){
-        var friend_id=friend;
-    }
-    $.ajax({
-        url : "/home/fetch_chat",
-        data: {receiver_id:friend_id},
-        success: fetch_chat,
-        type: "POST"
-    });
+    if(flag2!=0){
+        if(count==0 && friend != 0){
+            $('#view_ajax').empty();  
+        }
+        count=count+1;
+        if(friend!=0){
+            var friend_id=friend;
+        }
+        $.ajax({
+            url : "/home/fetch_chat",
+            data: {receiver_id:friend_id},
+            success: fetch_chat,
+            type: "POST"
+        });
+    
     return false;
+    }
 }, 1000);
 

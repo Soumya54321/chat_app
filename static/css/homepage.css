@@ -1,0 +1,257 @@
+body{
+    margin: 0px;
+    background-image: url(/static/img/bg2.png);
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+}
+
+.body{
+    box-sizing: border-box;
+    height: 780px;
+    display: block;
+    position: relative;
+    background-color: white;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width:85%;
+    margin-left: 7.5%;
+    margin-right:7.5%;
+    z-index: 4;
+}
+
+.friend{
+    border: solid black 0.5px;
+    height: 9%;
+    display: block;
+    position: relative;
+    padding-left: 3%;
+}
+p{
+    font-family: 'Noto Serif SC','Times New Roman', Times, serif;
+    margin: 0px;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.form{
+    width: 100%;
+    height: 95%;
+    position: relative;
+    margin: 0%;
+    margin-top: 1%;
+}
+
+.textarea{
+    width:77%;
+    float: left;
+    font-size: 16px;
+    height:80.5%;
+    margin-left: 2%;
+    margin-bottom: 0.5%;
+    position: relative;
+    border-radius: 35px;
+    padding-left: 2%;
+}
+
+.heading_friend{
+    border: solid 0.5px black;
+    text-align: center;
+    padding-top: 5%;
+    height: 100%;
+    background-image: url(/static/img/back5.jpg);
+}
+
+.heading_chat{
+    border: solid 0.5px black;
+    text-align: center;
+    padding-top: 2.5%;
+    height: 100%;
+    background-image: url(/static/img/back5.jpg);
+}
+
+
+.send{
+    float: left;
+    width:15%;
+    font-size: 16px;
+    height:50%;
+    margin-left: 5%;
+    position: relative;
+}
+
+.left_heading{
+    border-right: solid black 0.5px;
+    float: left;
+    box-sizing: border-box;
+    width: 35%;
+    height: 100%;
+    margin: solid black 0.4px;  
+    position: relative;
+    text-align: center;
+    z-index: 4;
+}
+
+.left_down{
+    border-right: solid black 0.5px;
+    float: left;
+    box-sizing: border-box;
+    width: 35%;
+    height: 100%;
+    margin: solid black 0.4px;  
+    position: relative;
+    text-align: center;
+    background-image: url(/static/img/back13.png);
+    background-attachment: scroll;
+    background-repeat: repeat;
+}
+
+
+
+.none{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Noto Serif SC', serif;
+    padding-top: 50%;
+}
+.right_heading{
+    border-right: solid black 0.5px;
+    float: left;
+    box-sizing: border-box;
+    width: 65%;
+    height: 100%;
+    margin: 0px;  
+    position: relative;
+}
+
+.none_chat{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Noto Serif SC', serif;
+    padding-top: 20%;
+}
+
+.upper{
+    border: solid black 0.5px;
+    height: 10%;
+    display: block;
+    position: relative;
+}
+
+.lower{
+    height: 90%;
+    display: block;
+    position: relative;
+}
+
+.right{
+    border-right: solid black 0.5px;
+    float: left;
+    box-sizing: border-box;
+    width: 65%;
+    height: 100%;
+    margin: 0px;  
+    position: relative;
+}
+
+.right-mid{
+    height: 89.7%;
+    display: none;
+    position: relative;
+    overflow-y: auto;
+    margin: 0px;
+    background-image: url(/static/img/back14.jpg);
+    background-attachment: local;
+    background-repeat: repeat;
+    z-index: 1;
+}
+
+.right-bottom{
+    border:solid 0.5px black;
+    height: 10.3%;
+    margin-top:0px;
+    display: none;
+    margin-left:0%;
+    position: relative;
+    display: none;
+}
+
+
+
+.chatbox_friend{
+    border: solid black 0.5px;
+    min-height: 9%;
+    width:50%;
+    display: block;
+    position: relative;
+    margin-left: 1%;
+    margin-top: 1%;
+    margin-right: 15%;
+    margin-bottom: 1%;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.chatbox_me{
+    border: solid black 0.5px;
+    min-height: 9%;
+    width: 50%;
+    display: block;
+    position: relative;
+    margin-left: 45%;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.chats{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: left;
+    white-space: pre-wrap;
+}
+
+.date_time{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px;
+    font-size: 10px;
+    padding-left: 1%;
+    padding-top: 0.8%;
+    padding-bottom: 1%;
+    text-align: left;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
