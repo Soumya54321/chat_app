@@ -41,5 +41,12 @@ class Login extends CI_Controller{
         }
     }
 
-
+    public function logout(){
+        session_start();
+        $data['title']='login';
+        $this->load->view('templates/header',$data);
+        $this->load->view('pages/login');
+        $this->load->view('templates/footer');
+        session_destroy();
+    }
 }

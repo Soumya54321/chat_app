@@ -14,7 +14,10 @@ class Home extends CI_Controller {
         $user_id=$_SESSION['id'];
         $this->load->model('chats');
         $data['friend']= $this->chats->fetch_all_friends($user_id);
+        $name['title']="homepage";
+        $this->load->view('templates/header',$name);
         $this->load->view('pages/homepage',$data);
+        $this->load->view('templates/footer');
 	}
     
     public function friend_select()
