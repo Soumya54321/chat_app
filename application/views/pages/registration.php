@@ -1,55 +1,54 @@
-<div class="body"> 
-    <div class="middle">
-        <div class="sides">
-
-        </div>
-        <div class="center">
-            <div class="heading">
-                <h1>Signup</h1>
+<div class="main">
+        <div class="container">
+            <div class="wrapper">
+                <form action="login/reg_submit" method="post">
+                    <span class="heading">Create Account</span>
+                    <div class="other-login">
+                            <div class="google-login">
+                                <button>
+                                    <i class="fab fa-google"></i>
+                                    Google
+                                </button>
+                            </div>
+                            <div class="fb-login">
+                                    <button>
+                                        <i class="fab fa-facebook-f"></i>
+                                        Facebook
+                                    </button>
+                            </div>
+                        </div>
+                    <div class="or">
+                        <hr class="hr-left">
+                        OR
+                        <hr class="hr-right">
+                    </div>
+                    <span class="text">Set Username</span>
+                    <div class="input">
+                        <input type="text" name="username">
+                        <span class="focus-input"></span>
+                    </div>
+                    <span class="text">Enter Your Email</span>
+                    <div class="input">
+                        <input type="email" name="email">
+                        <span class="focus-input"></span>
+                    </div>
+                    <span class="text">Enter Your Password</span>
+                    <div class="input">
+                        <input type="password" name="password">
+                        <span class="focus-input"></span>
+                    </div>
+                    <span class="text">Retype Your Password</span>
+                    <div class="input">
+                        <input type="password" name="re_password">
+                        <span class="focus-input"></span>
+                    </div>
+                    <div class="login-btn">
+                        <input type="button" class="btn">Create Account</button>
+                    </div>
+                </form>
             </div>
-            <form action="/login/reg_submit" method="post">
-                <div class="form-group form-element">
-                    <label>Email</label>
-                    <div class="input">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" name="email" placeholder= "Type your Email">
-                    </div>
-                </div>
-                <div class="form-group form-element">
-                    <label>Username</label>
-                    <div class="input">
-                        <i class="far fa-user"></i>
-                        <input type="text" name="username" placeholder= "Set your Username">
-                    </div>
-                </div>
-                <div class="form-group form-element">
-                    <label>Password</label>
-                    <div class="input">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" name="password" placeholder= "Set your Password">
-                    </div>
-                </div>
-                <div class="form-group form-element">
-                    <label>Confirm Password</label>
-                    <div class="input">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" name="conf_password" placeholder= "Retype your Password">
-                    </div>
-                </div>
-                <div class="submit">
-                    <input type="submit" value="SIGNUP">
-                </div>
-            </form>
-        </div>
-        </div>
-        <div class="sides">
-            
         </div>
     </div>
-</div>
-<div class="footer">
-    
-</div>
 
 
 
