@@ -61,7 +61,7 @@ p{
     text-align: center;
     padding-top: 5%;
     height: 100%;
-    background-image: url(/static/img/back5.jpg);
+    background-color: #ffcd6d;
 }
 
 .heading_chat{
@@ -69,7 +69,7 @@ p{
     text-align: center;
     padding-top: 2.5%;
     height: 100%;
-    background-image: url(/static/img/back5.jpg);
+    background-color: #ffcd6d;
 }
 
 
@@ -103,7 +103,7 @@ p{
     margin: solid black 0.4px;  
     position: relative;
     text-align: center;
-    background-image: url(/static/img/back13.png);
+    background-color:#ff604b;
     background-attachment: scroll;
     background-repeat: repeat;
 }
@@ -162,7 +162,6 @@ p{
     position: relative;
     overflow-y: auto;
     margin: 0px;
-    background-image: url(/static/img/back14.jpg);
     background-attachment: local;
     background-repeat: repeat;
     z-index: 1;
@@ -177,8 +176,6 @@ p{
     position: relative;
     display: none;
 }
-
-
 
 .chatbox_friend{
     border: solid black 0.5px;
@@ -240,11 +237,11 @@ ul {
     background-color: #333;
   }
   
-  li {
+.left_element {
     float: left;
   }
   
-  li a {
+li a {
     display: block;
     color: white;
     text-align: center;
@@ -252,9 +249,13 @@ ul {
     text-decoration: none;
   }
   
-  li a:hover {
+li a:hover {
     background-color: #111;
   }
+
+.right_element{
+    float: right;
+}
 
 input:focus, textarea {
     outline: none;

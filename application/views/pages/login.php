@@ -1,3 +1,9 @@
+
+<?php 
+    if (isset($_SESSION['id'])){
+        header('location: /home/homepage');
+    } else{
+?>
 <div class="main">
         <div class="container">
             <div class="wrapper">
@@ -50,3 +56,4 @@
             </div>
         </div>
     </div>
+<?php } ?>

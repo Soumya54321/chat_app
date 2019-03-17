@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller{
 
     public function view($page='login'){
+        session_start();
         if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
             show_404();
         }
